@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+<canvas id="chart2"></canvas>
+</div>
+
+</body>
+
+</html>
+
+<script>
+const cty = document.getElementById("chart2");
+
+new Chart(cty,{
+    type: "bar",
+    data: {
+        labels: [
+            "janeiro", "fevereiro", "março", "abril", "maio", "junho", 
+            "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+        ],
+        datasets: [{
+            label: "temperatura",
+            data: [22, 24, 27, 23, 20, 18, 22, 24, 27, 23, 20, 18],
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 1
+        },
+        {
+            label: "umidade",
+            data: [90, 89, 93, 87, 88, 82, 90, 89, 93, 87, 88, 82],
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
